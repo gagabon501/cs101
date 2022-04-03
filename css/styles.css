@@ -1,0 +1,174 @@
+body {
+  background: #30949dd4;
+  font-family: "Inter", sans-serif;
+}
+
+a.menu:link,
+a.menu:visited {
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.menu:hover,
+a.menu:active {
+  background-color: #191eb0;
+  color: white;
+  border-radius: 25px;
+}
+
+.gg_logo {
+  width: 50px;
+  height: 40px;
+  margin: 5px;
+}
+
+.gg_container {
+  background-color: lightgray;
+  margin: auto 20px;
+}
+
+.gg_navbar1 {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 8fr 3fr 1fr;
+  padding: 5px 50px;
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #5a61bf;
+}
+
+.content {
+  padding: 0px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 100px;
+}
+
+.gg_navbar2 {
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px 50px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.gg_cart {
+  float: right;
+  background-color: aliceblue;
+  width: 50px;
+  height: 40px;
+}
+
+.gg_menu_item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.gg_search_bar {
+  background-color: white;
+  border-radius: 25px;
+  color: black;
+}
+
+#categories {
+  margin-top: 70px;
+}
+.gg_categories {
+  background-color: #34328f;
+  padding: 250px 200px;
+}
+
+.category_item {
+  display: inline-block;
+}
+
+.gg_best_sellers {
+  margin: 10px;
+}
+
+.img_category {
+  height: 200px;
+  width: 200px;
+  margin: 10px 20px;
+}
+
+.image_block {
+  margin-top: 200px;
+}
+
+.gg_footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 100px;
+}
+
+a.footer:link,
+a.footer:visited {
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: small;
+}
+
+a.footer:hover,
+a.footer:active {
+  background-color: #191eb0;
+  color: white;
+  border-radius: 25px;
+}
+
+.product_image {
+  height: 350px;
+  width: auto;
+}
+
+.product {
+  display: inline-block;
+  margin: 10px;
+}
+
+.product_description {
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.price {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  margin-top: 20px;
+}
+
+.best_sellers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+button.add_cart {
+  padding: 5px;
+  width: 100%;
+  background-color: #c4c4c4;
+  border-radius: 25px;
+  margin-top: 20px;
+}

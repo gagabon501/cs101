@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JB HiFi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body onload="JavaScript:loadProducts()">
+    <header style="position: sticky">
+      <nav class="gg_navbar1">
+        <img
+          class="gg_logo"
+          src="image/3-JB_STACKED_CMYK-notag-nobracket.jpg"
+          alt="JB Hifi Logo"
+        />
+        <div class="gg_search_bar">
+          <div style="margin: 10px; display: inline-block">Search products</div>
+          <img
+            src="image/noun-search-4724990.png"
+            alt=""
+            style="
+              height: 30px;
+              float: right;
+              background-color: inherit;
+              margin-right: 20px;
+              margin-top: 10px;
+            "
+          />
+        </div>
+
+        <div>
+          <a href="#" class="menu gg_menu_item">my account</a>
+          <a href="#" class="menu gg_menu_item">gift cards</a>
+          <a href="#" class="menu gg_menu_item">stores</a>
+        </div>
+        <div>
+          <img
+            src="image/noun-cart-4729374.png"
+            alt="cart image"
+            style="background-color: inherit; height: auto; width: 50px"
+          />
+
+          <div
+            style="display: inline-block; font-weight: bold"
+            id="total_items"
+          >
+            0
+          </div>
+        </div>
+      </nav>
+      <nav>
+        <div class="gg_navbar2">
+          <h4>Product categories</h4>
+          <a href="#" class="menu gg_menu_item">Computers and tablets</a>
+          <a href="#" class="menu gg_menu_item">TVs</a>
+          <a href="#" class="menu gg_menu_item">Mobile Phones</a>
+          <a href="#" class="menu gg_menu_item">Headphones and Speakers</a>
+          <a href="#" class="menu gg_menu_item">Cameras</a>
+          <a href="#" class="menu gg_menu_item">Drones</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section style="margin-top: 5px">
+        <div
+          id="carouselIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="image/6141c4921316e88e86ecdad4_Free iPhone 13 Mockup -Blue 1.png"
+                class="d-block w-100"
+                alt="..."
+                style="height: 650px; width: auto"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="image/6141c4921316e88e86ecdad4_Free iPhone 13 Mockup -Blue 1.png"
+                class="d-block w-100"
+                alt="..."
+                style="height: 650px; width: auto"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="image/6141c4921316e88e86ecdad4_Free iPhone 13 Mockup -Blue 1.png"
+                class="d-block w-100"
+                alt="..."
+                style="height: 650px; width: auto"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <span>
+          <a href="#categories" style="float: right">
+            <img src="image/Arrow 1.png" alt="" style="height: 50px" />
+          </a>
+        </span>
+      </section>
+      <section id="categories">
+        <div
+          style="
+            background-color: #c4c4c4;
+            color: #63094a;
+            font-size: 50px;
+            font-weight: 100;
+            font-style: normal;
+            font-family: inherit;
+            margin-top: 50px;
+          "
+        >
+          shop categories
+        </div>
+
+        <div class="gg_categories">
+          <a href="#">
+            <img
+              class="img_category"
+              src="image/noun-devices-994205 1.png"
+              alt=""
+            />
+          </a>
+          <a href="#"
+            ><img class="img_category" src="image/noun-tv-1605190 1.png" alt=""
+          /></a>
+          <a href="#">
+            <img
+              class="img_category"
+              src="image/noun-phone-2173681 1.png"
+              alt=""
+            />
+          </a>
+          <a href="#">
+            <img
+              class="img_category"
+              src="image/noun-headphones-4707449 1.png"
+              alt=""
+            />
+          </a>
+          <a href="#">
+            <img
+              class="img_category"
+              src="image/noun-camera-4705654 1.png"
+              alt=""
+            />
+          </a>
+          <a href="#">
+            <img
+              class="img_category"
+              src="image/noun-drone-4695244 1.png"
+              alt=""
+            />
+          </a>
+        </div>
+      </section>
+      <div>
+        <a href="#best_sellers" style="float: left">
+          <img src="image/Arrow 1.png" alt="" style="height: 50px" />
+        </a>
+      </div>
+      <section id="best_sellers" style="margin-top: 52px">
+        <div
+          style="
+            background-color: #c4c4c4;
+            color: #63094a;
+            font-size: 50px;
+            font-weight: 100;
+            font-style: normal;
+            font-family: inherit;
+            text-align: end;
+          "
+        >
+          our best sellers
+        </div>
+        <div class="best_sellers">
+          <div class="product">
+            <img
+              class="product_image"
+              src="image/iphone-13-pro-2022-gallery-1 1.png"
+              alt=""
+            />
+            <div class="price">$1,429.00</div>
+            <div class="product_description">
+              iPhone 13. The most advanced dual-camera system ever on iPhone.
+              Lightning-fast A15 Bionic chip. A big leap in battery life.
+              Durable design. Superfast 5G. And a brighter Super Retina XDR
+              display.
+            </div>
+            <button class="add_cart" onclick="addToCart(1)">add to cart</button>
+          </div>
+
+          <div class="product">
+            <img
+              class="product_image"
+              src="image/iphone-13-pro-2022-gallery-1 1.png"
+              alt=""
+            />
+            <div class="price">$1,429.00</div>
+            <div class="product_description">
+              iPhone 13. The most advanced dual-camera system ever on iPhone.
+              Lightning-fast A15 Bionic chip. A big leap in battery life.
+              Durable design. Superfast 5G. And a brighter Super Retina XDR
+              display.
+            </div>
+            <button class="add_cart" onclick="addToCart(2)">add to cart</button>
+          </div>
+          <div class="product">
+            <img
+              class="product_image"
+              src="image/iphone-13-pro-2022-gallery-1 1.png"
+              alt=""
+            />
+            <div class="price">$1,429.00</div>
+            <div class="product_description">
+              iPhone 13. The most advanced dual-camera system ever on iPhone.
+              Lightning-fast A15 Bionic chip. A big leap in battery life.
+              Durable design. Superfast 5G. And a brighter Super Retina XDR
+              display.
+            </div>
+            <button class="add_cart" onclick="addToCart(3)">add to cart</button>
+          </div>
+          <div class="product">
+            <img
+              class="product_image"
+              src="image/iphone-13-pro-2022-gallery-1 1.png"
+              alt=""
+            />
+            <div class="price">$1,429.00</div>
+            <div class="product_description">
+              iPhone 13. The most advanced dual-camera system ever on iPhone.
+              Lightning-fast A15 Bionic chip. A big leap in battery life.
+              Durable design. Superfast 5G. And a brighter Super Retina XDR
+              display.
+            </div>
+            <button class="add_cart" onclick="addToCart(4)">add to cart</button>
+          </div>
+          <div class="product">
+            <img
+              class="product_image"
+              src="image/iphone-13-pro-2022-gallery-1 1.png"
+              alt=""
+            />
+            <div class="price">$1,429.00</div>
+            <div class="product_description">
+              iPhone 13. The most advanced dual-camera system ever on iPhone.
+              Lightning-fast A15 Bionic chip. A big leap in battery life.
+              Durable design. Superfast 5G. And a brighter Super Retina XDR
+              display.
+            </div>
+            <button class="add_cart" onclick="addToCart(5)">add to cart</button>
+          </div>
+          <div class="product">
+            <img
+              class="product_image"
+              src="image/iphone-13-pro-2022-gallery-1 1.png"
+              alt=""
+            />
+            <div class="price">$1,429.00</div>
+            <div class="product_description">
+              iPhone 13. The most advanced dual-camera system ever on iPhone.
+              Lightning-fast A15 Bionic chip. A big leap in battery life.
+              Durable design. Superfast 5G. And a brighter Super Retina XDR
+              display.
+            </div>
+            <button class="add_cart" onclick="addToCart(6)">add to cart</button>
+          </div>
+          <div class="product">
+            <img
+              class="product_image"
+              src="image/iphone-13-pro-2022-gallery-1 1.png"
+              alt=""
+            />
+            <div class="price">$1,429.00</div>
+            <div class="product_description">
+              iPhone 13. The most advanced dual-camera system ever on iPhone.
+              Lightning-fast A15 Bionic chip. A big leap in battery life.
+              Durable design. Superfast 5G. And a brighter Super Retina XDR
+              display.
+            </div>
+            <button class="add_cart" onclick="addToCart(7)">add to cart</button>
+          </div>
+        </div>
+      </section>
+      <div id="show_product"></div>
+      <div>
+        <a href="#footer" style="float: left">
+          <img src="image/Arrow 1.png" alt="" style="height: 50px" />
+        </a>
+      </div>
+    </main>
+    <footer id="footer" class="gg_footer">
+      <div>
+        Your Order
+        <a class="footer" href="#" style="margin-top: 10px">Track Order</a>
+        <a class="footer" href="#">Delivery</a>
+        <a class="footer" href="#">Click & Collect</a>
+        <a class="footer" href="#">Online Returns</a>
+      </div>
+      <div>
+        About
+        <a class="footer" href="#" style="margin-top: 10px">Commercial Sales</a>
+        <a class="footer" href="#">Price Promise</a>
+        <a class="footer" href="#">Privacy Policy</a>
+        <a class="footer" href="#">Buying Guides</a>
+        <a class="footer" href="#">Promotion Terms & Conditions</a>
+      </div>
+      <div>
+        Customer Care
+        <a class="footer" href="#" style="margin-top: 10px">Commercial Sales</a>
+        <a class="footer" href="#">Price Promise</a>
+        <a class="footer" href="#">Privacy Policy</a>
+        <a class="footer" href="#">Buying Guides</a>
+        <a class="footer" href="#">Promotion Terms & Conditions</a>
+      </div>
+      <div>
+        Services
+        <a class="footer" href="#" style="margin-top: 10px">Commercial Sales</a>
+        <a class="footer" href="#">Price Promise</a>
+        <a class="footer" href="#">Privacy Policy</a>
+        <a class="footer" href="#">Buying Guides</a>
+        <a class="footer" href="#">Promotion Terms & Conditions</a>
+      </div>
+
+      <div>
+        Corporate
+        <a class="footer" href="#" style="margin-top: 10px">Commercial Sales</a>
+        <a class="footer" href="#">Price Promise</a>
+        <a class="footer" href="#">Privacy Policy</a>
+        <a class="footer" href="#">Buying Guides</a>
+        <a class="footer" href="#">Promotion Terms & Conditions</a>
+      </div>
+
+      <div>
+        JB HiFi App
+        <img src="image/available_on_both_stores_generated 1.png" alt="" />
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="javascript/gg_lib.js"></script>
+  </body>
+</html>
