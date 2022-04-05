@@ -67,6 +67,22 @@ function loadProducts() {
     image: "image/iphone-13-pro-2022-gallery-1 1.png",
   });
 
+  //   arrProduct.push({
+  //     id: 8,
+  //     description:
+  //       "iPhone 20. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A big leap in battery life. Durable design. Superfast 5G. And a brighter Super Retina XD display.",
+  //     price: "$1,445.00",
+  //     image: "image/iphone-13-pro-2022-gallery-1 1.png",
+  //   });
+
+  //   arrProduct.push({
+  //     id: 9,
+  //     description:
+  //       "iPhone 21. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A big leap in battery life. Durable design. Superfast 5G. And a brighter Super Retina XD display.",
+  //     price: "$1,450.00",
+  //     image: "image/iphone-13-pro-2022-gallery-1 1.png",
+  //   });
+
   //   console.log(arrProduct);
   sessionStorage.setItem("products", JSON.stringify(arrProduct)); //store product array into the sessionStorage
   sessionStorage.setItem("cart_qty", 0);
