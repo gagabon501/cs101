@@ -109,7 +109,7 @@ img {
   justify-content: space-between;
 }
 
-input {
+.search_input {
   border: none;
   border-width: 0px;
   outline: none;
@@ -168,11 +168,6 @@ a.footer:active {
   border-radius: 25px;
 }
 
-.product_image {
-  height: 350px;
-  width: 100%;
-}
-
 .product {
   display: inline-block;
   margin: 10px;
@@ -218,6 +213,96 @@ button.add_cart {
   width: 40px;
   height: auto;
   margin: 5px;
+}
+
+#price {
+  margin-top: 50px;
+  color: blue;
+  font-weight: bold;
+}
+
+.form-control {
+  margin: 5px 5px;
+  padding: 5px 10px;
+}
+
+#qty {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  border: 1px solid #333;
+}
+
+.vert_strip {
+  background-color: white;
+  padding: 10px;
+  margin: 0 10px;
+  height: auto;
+}
+
+.product_image {
+  height: 30vh;
+  width: 100%;
+}
+.section_main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  height: 100%;
+}
+.right_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.left_col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.col_contents {
+  margin: 10px 0;
+  padding: 5px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.inside_col {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0px;
+}
+
+.protect {
+  margin-left: 100px;
+  color: #fff;
+}
+.deliver {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px;
+}
+
+.deliver button {
+  border: 1px solid #333;
+  border-radius: 50px;
+}
+
+.gg_button {
+  padding: 10px;
+  background-color: #191eb0;
+  border: 1px solid #333;
+  border-radius: 50px;
+  color: #fff;
+}
+
+#promo_code {
+  display: block;
+  padding: 5px;
 }
 
 /* Media Queries */
@@ -287,10 +372,18 @@ button.add_cart {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 100px;
   }
+  .section_main {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Mobile */
 @media (max-width: 500px) {
+  .section_main {
+    display: flex;
+    flex-direction: column;
+  }
   .best_sellers {
     display: grid;
     grid-template-columns: 1fr 1fr;

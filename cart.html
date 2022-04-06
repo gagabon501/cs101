@@ -23,6 +23,7 @@
         /></a>
         <div class="gg_search_bar">
           <input
+            class="search_input"
             type="text"
             name="search"
             id="search"
@@ -49,10 +50,93 @@
     </div>
 
     <!-- Content -->
+
     <div class="content">
-      <h1>Products in cart</h1>
+      <div class="strip_bar">Products in cart</div>
+      <div class="section_main">
+        <div class="left_col">
+          <div class="inside_col">
+            <img class="product_image" src="image/iphone13.png" alt="" />
+            <div style="margin-top: 50px">
+              <h2 style="color: #fff; font-weight: bold">
+                Apple iPhone 13 128GB Model MNGK3X/A
+              </h2>
+              <p style="color: #fff">
+                The most advanced dual-camera system ever on iPhone.
+                Lightning-fast A15 Bionic chip. A big leap in battery life.
+                Durable design. Superfast 5G. And a brighter Super Retina XDR
+                display.
+              </p>
+            </div>
+            <div class="vert_strip">
+              <div id="qty">1</div>
+              <h4 id="price">$1,429.00</h4>
+            </div>
+          </div>
+          <div class="protect">
+            <p>Protect your product:</p>
+            <form>
+              <input type="radio" id="yr3" name="yr" value="3" />
+              <label for="yr3">3 year protection - $330.00</label><br />
+              <input type="radio" id="yr2" name="yr" value="2" />
+              <label for="yr2">2 year protection - $250.00</label><br />
+              <input type="radio" id="yr1" name="yr" value="1" />
+              <label for="yr1">1 year protection - $150.00</label><br />
+              <input type="radio" id="yr0" name="yr" value="0" />
+              <label for="yr1">No thanks</label>
+            </form>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="col_contents">
+            <h5>Delivery method</h5>
+            <div class="deliver">
+              <form>
+                <input
+                  type="radio"
+                  id="click_collect"
+                  name="collect"
+                  value="click_collect"
+                />
+                <label for="click_collect">Click and Collect</label><br />
+                <input
+                  type="radio"
+                  id="std_deliver"
+                  name="collect"
+                  value="std_deliver"
+                />
+                <label for="std_deliver">Standard delivery</label><br />
+              </form>
+              <div>
+                FREE<br />
+                $6.00
+              </div>
+            </div>
+
+            <div class="deliver">
+              <div class="promo">
+                <label for="promo_code">Apply promo code</label>
+                <input type="text" id="promo_code" name="promo" />
+              </div>
+              <button>Apply</button>
+            </div>
+            <h2>Order Summary</h2>
+            <div class="deliver">
+              <h5>Sub-Total</h5>
+              <h5>$1,429.00</h5>
+              <h5>Click & Collect</h5>
+              <h5>FREE</h5>
+              <h4>TOTAL TO PAY</h4>
+              <h4>$1,429.00</h4>
+            </div>
+            <button class="gg_button">PROCEED TO CHECKOUT</button>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Footer -->
     <footer id="footer" class="gg_footer">
       <div>
         <strong>Your Order</strong>
@@ -67,7 +151,6 @@
         <a class="footer" href="#">Price Promise</a>
         <a class="footer" href="#">Privacy Policy</a>
         <a class="footer" href="#">Buying Guides</a>
-        <a class="footer" href="#">Promotion Terms & Conditions</a>
       </div>
       <div>
         <strong>Customer Care</strong>
@@ -75,12 +158,12 @@
         <a class="footer" href="#">Contact Us</a>
         <a class="footer" href="#">Feedback</a>
         <a class="footer" href="#">Returns and Exchanges</a>
-        <a class="footer" href="#">Store Finder</a>
+        <!-- <a class="footer" href="#">Store Finder</a>
         <a class="footer" href="#">Payment Options</a>
         <a class="footer" href="#">Gift Cards</a>
         <a class="footer" href="#">Gift Card Balance Checker</a>
         <a class="footer" href="#">Repairs & Warranty</a>
-        <a class="footer" href="#">Consumer Guarantees Act</a>
+        <a class="footer" href="#">Consumer Guarantees Act</a> -->
       </div>
       <div>
         <strong>Services</strong>
@@ -88,8 +171,8 @@
         <a class="footer" href="#">Get Setup</a>
         <a class="footer" href="#">Get Covered</a>
         <a class="footer" href="#">Get Help</a>
-        <a class="footer" href="#">Get Help for your Business</a>
-        <a class="footer" href="#">View all Services</a>
+        <!-- <a class="footer" href="#">Get Help for your Business</a>
+        <a class="footer" href="#">View all Services</a> -->
       </div>
 
       <div>
@@ -97,6 +180,7 @@
         <a class="footer" href="#" style="margin-top: 10px">Investor Centre</a>
         <a class="footer" href="#">Media Centre</a>
         <a class="footer" href="#">Careers</a>
+        <a class="footer" href="#">View all Services</a>
       </div>
 
       <div style="margin: 10px">
@@ -114,6 +198,7 @@
         </div>
       </div>
     </footer>
+
     <div class="payment_options">
       We Accept
       <img src="image/visa-115507187089o8siwhhtf.png" alt="" />
