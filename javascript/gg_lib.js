@@ -151,9 +151,13 @@ function totalCost() {
     "$" + totalCost.toLocaleString("en-US");
 }
 
+// Load products dynamically
 function loadProducts() {
-  showCart();
+  showCart(); //shows how many items in the cart - updates the cart info in the navbar
+
+  // Create the product object array. The image value is the actual location of the image file
   let arrProduct = [];
+
   arrProduct.push({
     id: 1,
     name: "iPhone 13",
@@ -162,6 +166,7 @@ function loadProducts() {
     price: 1429,
     image: "image/iphone13.png",
   });
+
   arrProduct.push({
     id: 2,
     name: "Huawei Y6p (Midnight Black)",
@@ -170,6 +175,7 @@ function loadProducts() {
     price: 129,
     image: "image/huawuei_phone.png",
   });
+
   arrProduct.push({
     id: 3,
     name: "OPPO Find X5 Lite 5G 256GB (Starry Black)",
@@ -178,6 +184,7 @@ function loadProducts() {
     price: 899,
     image: "image/oppo_phone.png",
   });
+
   arrProduct.push({
     id: 4,
     name: "GoPro Hero9 Black",
@@ -213,6 +220,7 @@ function loadProducts() {
     price: 79,
     image: "image/sony_headphone.png",
   });
+
   arrProduct.push({
     id: 8,
     name: "Samsung AU7000 55in. 4K UHD Smart TV [2021]",
@@ -222,8 +230,10 @@ function loadProducts() {
     image: "image/samsung_hd_50.png",
   });
 
-  localStorage.setItem("products", JSON.stringify(arrProduct)); //store product array into the localStorage
+  //store product object array into the localStorage - used localStorage as some sort of database for the products
+  localStorage.setItem("products", JSON.stringify(arrProduct));
 
+  // the main 'div' for the 'best sellers' section
   let best_sellers_div = document.getElementById("prod_best_sellers");
 
   let div_product,
@@ -235,30 +245,34 @@ function loadProducts() {
     product_desc_div,
     price;
 
+  // retrieve the products stored in the localStorage - parse the object to get an array of products using JSON.parse()
   products = JSON.parse(localStorage.getItem("products"));
 
-  for (i = 0; i < arrProduct.length; i++) {
+  // This is where the magic begins - loop through the product array and dynamically attach the elements into the DOM
+
+  for (i = 0; i < products.length; i++) {
     //create containing div for the product
     div_product = document.createElement("div");
-    // div_product.className = "product gg_container";
     div_product.className = "product";
     div_product.id = "product_" + i;
-    // div_product.innerText = products[i].description;
     best_sellers_div.appendChild(div_product); //add to the DOM
-    // main_prod_div.appendChild(div_product); //add to the DOM
+
+    // main 'div' to contain all the product info i.e. image, price, name, and description
+    product_div = document.getElementById(`product_${i}`);
+
+    // create the div for the image container - have to use a 'div' with a class 'image_container' to have better control at the sizing of the image without skewing or lossing quality of the image
+    div_product_img = document.createElement("div");
+    div_product_img.className = "img_container";
+    div_product_img.id = "img_container_" + i;
 
     // create the product image element
     img = document.createElement("img");
     img.className = "product_image";
     img.src = products[i].image;
     img.id = "product_image_" + i;
-    product_div = document.getElementById(`product_${i}`);
-    // product_div.appendChild(img); //add the image element to the product 'div'
-
-    div_product_img = document.createElement("div");
-    div_product_img.className = "img_container";
-    div_product_img.id = "img_container_" + i;
     product_div.append(div_product_img);
+
+    // attach image to its containing 'div'
     document.getElementById(`img_container_${i}`).appendChild(img);
 
     //create the 'div' for the price
@@ -267,30 +281,34 @@ function loadProducts() {
     price_div.id = "price_" + i;
     price = products[i].price.toFixed(2);
 
+    // toLocaleString() is used to put comma separator
     price_div.innerText = "$" + parseInt(price).toLocaleString("en-US");
 
-    product_div.appendChild(price_div);
+    product_div.appendChild(price_div); //attach to the main 'div' for the product
 
-    //create the div for the description
+    //create the div for the product name
     product_name_div = document.createElement("div");
     product_name_div.className = "prod_name";
     product_name_div.id = "prod_name_" + i;
     product_name_div.innerText = products[i].name;
-    product_div.appendChild(product_name_div);
+
+    product_div.appendChild(product_name_div); //attach to the main 'div' for the product
 
     //create the div for the description
     product_desc_div = document.createElement("div");
     product_desc_div.className = "product_description";
     product_desc_div.id = "prod_desc_" + i;
     product_desc_div.innerText = products[i].description;
-    product_div.appendChild(product_desc_div);
+
+    product_div.appendChild(product_desc_div); //attach to the main 'div' for the product
 
     //create the button for the 'add to cart'
     button = document.createElement("button");
     button.className = "add_cart";
     button.innerText = "Add to Cart";
     button.id = "button_" + i;
-    button.setAttribute("onclick", `addToCart(${i})`); //way to go! this is the way to add the onclick method on to the button
-    product_div.appendChild(button);
+    button.setAttribute("onclick", `addToCart(${i})`); //way to go! this is the way to add the onclick method on to the button - used template string here to pass parameters dynamically
+
+    product_div.appendChild(button); //attach to the main 'div' for the product
   }
 }

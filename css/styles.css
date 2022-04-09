@@ -47,11 +47,10 @@ img {
 
 .carousel_container {
   width: 800px;
-  height: 300px;
+  height: 350px;
   margin: 0 auto;
   overflow: auto;
   padding: 0 40px;
-
   height: 800px;
 }
 
@@ -166,6 +165,7 @@ a.footer:active {
   border-radius: 25px;
 }
 
+/* Used grid-template-rows to create a uniform line height for each product's information i.e product image, price, name of product, and the description. Used 'px' to control the size of each row */
 .product {
   margin: 10px;
   display: grid;
@@ -453,6 +453,15 @@ button.add_cart {
 
 /* Mobile */
 @media (max-width: 500px) {
+  .carousel_container {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+    height: 800px;
+  }
+
   .product_card {
     background-color: #fff;
     color: #333;
