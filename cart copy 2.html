@@ -54,9 +54,95 @@
     <div class="content">
       <div class="strip_bar">Products in cart</div>
       <div class="section_main">
-        <div id="products" class="products"></div>
+        <div id="products" class="products">
+          <div id="prod_1" class="product_card">
+            <div id="prod_container_1" class="prod_container">
+              <div id="prod_desc_1" class="prod_desc">
+                <div class="img_container">
+                  <img class="product_image" src="image/iphone13.png" alt="" />
+                </div>
 
-        <div id="order_summary" class="order_summary">
+                <h5 style="font-weight: bold">
+                  Apple iPhone 13 128GB Model MNGK3X/A
+                </h5>
+                <p>
+                  The most advanced dual-camera system ever on iPhone.
+                  Lightning-fast A15 Bionic chip. A big leap in battery life.
+                  Durable design. Superfast 5G. And a brighter Super Retina XDR
+                  display.
+                </p>
+              </div>
+              <div class="vert_strip">
+                <div class="my_input">
+                  <input class="qty" type="text" value="1" />
+                  <button class="close" onclick="removeItem(1)">
+                    <i class="fa-solid fa-circle-minus"></i>
+                  </button>
+                </div>
+
+                <h5 class="price_cart">$1,429.00</h5>
+              </div>
+            </div>
+          </div>
+          <div id="prod_2" class="product_card">
+            <div class="prod_container">
+              <div class="prod_desc">
+                <div class="img_container">
+                  <img class="product_image" src="image/iphone13.png" alt="" />
+                </div>
+
+                <h5 style="font-weight: bold">
+                  Apple iPhone 13 128GB Model MNGK3X/A
+                </h5>
+                <p>
+                  The most advanced dual-camera system ever on iPhone.
+                  Lightning-fast A15 Bionic chip. A big leap in battery life.
+                  Durable design. Superfast 5G. And a brighter Super Retina XDR
+                  display.
+                </p>
+              </div>
+              <div class="vert_strip">
+                <div class="my_input">
+                  <input class="qty" type="text" value="1" />
+                  <button class="close" onclick="removeItem(2)">
+                    <i class="fa-solid fa-circle-minus"></i>
+                  </button>
+                </div>
+
+                <h5 class="price_cart">$1,429.00</h5>
+              </div>
+            </div>
+          </div>
+          <div id="prod_3" class="product_card">
+            <div class="prod_container">
+              <div class="prod_desc">
+                <img class="product_image" src="image/iphone13.png" alt="" />
+
+                <h5 style="font-weight: bold">
+                  Apple iPhone 13 128GB Model MNGK3X/A
+                </h5>
+                <p>
+                  The most advanced dual-camera system ever on iPhone.
+                  Lightning-fast A15 Bionic chip. A big leap in battery life.
+                  Durable design. Superfast 5G. And a brighter Super Retina XDR
+                  display.
+                </p>
+              </div>
+              <div class="vert_strip">
+                <div class="my_input">
+                  <input class="qty" type="text" value="1" />
+                  <button class="close" onclick="removeItem(3)">
+                    <i class="fa-solid fa-circle-minus"></i>
+                  </button>
+                </div>
+
+                <h5 class="price_cart">$1,429.00</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order_summary">
           <div class="col_contents">
             <h5>Delivery method</h5>
             <div class="deliver">
@@ -66,7 +152,6 @@
                   id="click_collect"
                   name="collect"
                   value="click_collect"
-                  onclick="selectDelivery('free')"
                 />
                 <label for="click_collect">Click and Collect</label><br />
                 <input
@@ -74,7 +159,6 @@
                   id="std_deliver"
                   name="collect"
                   value="std_deliver"
-                  onclick="selectDelivery('std')"
                 />
                 <label for="std_deliver">Standard delivery</label><br />
               </form>
@@ -93,12 +177,12 @@
             </div>
             <h2>Order Summary</h2>
             <div class="deliver">
-              <h5 id="sub_total">Sub-Total</h5>
-              <h5 id="sub_total_amount"></h5>
-              <h5 id="click_collect">Click & Collect</h5>
-              <h5 id="click_collect_value">FREE</h5>
-              <h4 id="total">TOTAL TO PAY</h4>
-              <h4 id="total_amount"></h4>
+              <h5>Sub-Total</h5>
+              <h5>$1,429.00</h5>
+              <h5>Click & Collect</h5>
+              <h5>FREE</h5>
+              <h4>TOTAL TO PAY</h4>
+              <h4>$1,429.00</h4>
             </div>
             <button class="gg_button">PROCEED TO CHECKOUT</button>
           </div>
