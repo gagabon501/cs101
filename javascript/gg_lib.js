@@ -4,7 +4,8 @@ function addToCart(item_num) {
       ? []
       : JSON.parse(localStorage.getItem("cartItems"));
   const products = JSON.parse(localStorage.getItem("products"));
-  const product = products.filter((p) => parseInt(p.id) == item_num + 1);
+  let product = products.filter((p) => parseInt(p.id) == item_num + 1);
+  product[0].qty = 1; //update the qty
   cartItems.push(product[0]);
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
@@ -35,9 +36,19 @@ function removeItem(item_num, id) {
   totalCost();
 }
 
+function inputHandler(e) {
+  const id = e.path[0].id;
+  const index = parseInt(id.substr(4, 1));
+  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  cartItems[index].qty = e.target.value;
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  totalCost();
+}
+
 function viewCart() {
   showCart();
   totalCost();
+
   if (JSON.parse(localStorage.getItem("cartItems")).length === 0) {
     document.getElementById("order_summary").style.display = "none";
   }
@@ -77,7 +88,7 @@ function viewCart() {
     img.src = products[i].image;
     img.id = "product_image_" + i;
     document.getElementById(`img_container_${i}`).appendChild(img);
-    // document.getElementById(`prod_desc_${i}`).appendChild(img);
+
     // create h5
     prod_name = document.createElement("h5");
     prod_name.className = "prod_name";
@@ -107,7 +118,9 @@ function viewCart() {
     qty.id = "qty_" + i;
     document.getElementById("my_input_" + i).appendChild(qty);
     qty.setAttribute("type", "text");
-    qty.setAttribute("value", "1");
+    qty.setAttribute("value", products[i].qty);
+
+    qty.addEventListener("change", (e) => inputHandler(e));
 
     btn = document.createElement("button");
     btn.className = "close";
@@ -141,7 +154,7 @@ function totalCost() {
   // const cartItems = JSON.parse(localStorage.getItem("cartItems"));
   const cartItems = JSON.parse(localStorage.getItem("cartItems"));
   for (i = 0; i < cartItems.length; i++) {
-    totalCost += parseInt(cartItems[i].price);
+    totalCost += parseInt(cartItems[i].price) * parseInt(cartItems[i].qty);
   }
   totalCost += parseInt(localStorage.getItem("delvFee"));
   console.log(totalCost);
@@ -165,6 +178,7 @@ function loadProducts() {
       "iPhone 13. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A big leap in battery life. Durable design. Superfast 5G. And a brighter Super Retina XD display.",
     price: 1429,
     image: "image/iphone13.png",
+    qty: 0,
   });
 
   arrProduct.push({
@@ -174,6 +188,7 @@ function loadProducts() {
       "The 6.3inch Dewdrop Display4 with an 88.4% screen-to-body ratio provides a wide and immersive visual experience5. With a diameter of 2.65 mm, the tiny and discreet front camera with a narrow frame achieves more room to showcase the exciting game graphics and fantastic images with less interruptions.",
     price: 129,
     image: "image/huawuei_phone.png",
+    qty: 0,
   });
 
   arrProduct.push({
@@ -183,6 +198,7 @@ function loadProducts() {
       "Portrait Retouching AI has 193 control points that will identify your features so you can spotlight your natural charms. With 8 adjustable retouching options for the front camera, you’ll always be ready for the big screen. 64MP Rear Camera, 32MP Front Camera, 118° Ultra Wide-Angle Camera, 4cm Maco Camera",
     price: 899,
     image: "image/oppo_phone.png",
+    qty: 0,
   });
 
   arrProduct.push({
@@ -192,6 +208,7 @@ function loadProducts() {
       "5K Video Shoot stunning video with up to 5K resolution, perfect for maintaining serious detail even when zooming in. Packing a new 23.6MP sensor that is an absolute powerhouse, HERO9 Black brings lifelike image sharpness, fluid motion and in-camera horizon leveling that always impresses. 20MP Photo with SuperPhoto Capture crisp, pro-quality photos with 20MP clarity.",
     price: 699,
     image: "image/go_pro_camera.png",
+    qty: 0,
   });
 
   arrProduct.push({
@@ -201,6 +218,7 @@ function loadProducts() {
       "15.6-inch Full HD (1920 x 1080) display, Intel Core i5-1135G7 quad core processor (8MB cache, 2.4GHz up to 4.2 GHz), 8GB RAM, 256GB SSD, Intel UHD graphics, 1 x HDMI port, 1 x USB-C port, 1 x USB-A 3.1 port, 2 x USB-A 2.0 ports, VGA Camera, Bluetooth v4.1, Wi-Fi 5 (802.11ac), 37WHrs, 2-cell battery, Windows 11 Home",
     price: 1433,
     image: "image/asus_laptop.png",
+    qty: 0,
   });
 
   arrProduct.push({
@@ -210,6 +228,7 @@ function loadProducts() {
       "4K Photo, 1080p Full HD Video & Automatic GimbalExperience 4K Photo and 1080p Full High-Definition crystal clear video recording. Direct the action from your remote control by adjusting the camera up and down using the Automatic Gimbal. WIFI FPV Mode Fly with Evo 4K's point of view using your iOS or Android Smartphone or compatible VR Headset. Foldable design Take your drone and remote anywhere with its compact and foldable design.",
     price: 349,
     image: "image/drone.png",
+    qty: 0,
   });
 
   arrProduct.push({
@@ -219,6 +238,7 @@ function loadProducts() {
       "The WH-CH510 is a compact wireless headphone designed for everyday use. The soft ear-pads, adjustable headband and swivel design make this headphone ideal for commuting and everyday music enjoyment. A long battery-life, music playback controls and support for hands-free calls also make this headphone a great smartphone companion.",
     price: 79,
     image: "image/sony_headphone.png",
+    qty: 0,
   });
 
   arrProduct.push({
@@ -228,6 +248,7 @@ function loadProducts() {
       "PurColour - Fine tuned colour for a vibrant, lifelike picture.PurColour makes watching films feel almost like you're there. It enables the TV to express a huge range of colours for optimal picture performance, and an immersive viewing experience. Crystal Processor 4K - Lifelike shades of colour in powerful 4K Powerful 4K upscaling ensures you get up to 4K resolution for the content you love.",
     price: 1096,
     image: "image/samsung_hd_50.png",
+    qty: 0,
   });
 
   //store product object array into the localStorage - used localStorage as some sort of database for the products
