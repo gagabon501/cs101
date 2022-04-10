@@ -14,10 +14,135 @@
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body onload="JavaScript:showCart()">
+    <!-- Navigation -->
+    <div class="gg_navbar">
+      <div class="gg_container gg_flex">
+        <a href="index.html"
+          ><img class="gg_logo" src="image/JB-Hifi_Logo.jpg" alt="JB Hifi Logo"
+        /></a>
+        <div class="gg_search_bar">
+          <input
+            class="search_input"
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search products..."
+          />
+          <i
+            style="float: right; margin-top: 5px; margin-right: 5px"
+            class="fa-solid fa-magnifying-glass"
+          ></i>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">My Account</a></li>
+            <li>
+              <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </li>
+            <li id="total_items" style="margin-left: 10px">0</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <!-- Content -->
-    <div class="content">
-      <h1>Login</h1>
+    <div class="login_content">
+      <div class="login-form card">
+        <h2>Login</h2>
+        <form>
+          <div class="gg_form-control">
+            <label for="email">Username</label>
+            <input
+              class="gg_input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="gg_form-control">
+            <label for="password">Password</label>
+            <input class="gg_input" type="password" name="password" required />
+          </div>
+        </form>
+        <input type="submit" value="Send" class="gg_button" />
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer" class="gg_footer">
+      <div>
+        <strong>Your Order</strong>
+        <a class="footer" href="#" style="margin-top: 10px">Track Order</a>
+        <a class="footer" href="#">Delivery</a>
+        <a class="footer" href="#">Click & Collect</a>
+        <a class="footer" href="#">Online Returns</a>
+      </div>
+      <div>
+        <strong>About</strong>
+        <a class="footer" href="#" style="margin-top: 10px">Commercial Sales</a>
+        <a class="footer" href="#">Price Promise</a>
+        <a class="footer" href="#">Privacy Policy</a>
+        <a class="footer" href="#">Buying Guides</a>
+      </div>
+      <div>
+        <strong>Customer Care</strong>
+        <a class="footer" href="#" style="margin-top: 10px">Help Centere</a>
+        <a class="footer" href="#">Contact Us</a>
+        <a class="footer" href="#">Feedback</a>
+        <a class="footer" href="#">Returns and Exchanges</a>
+        <!-- <a class="footer" href="#">Store Finder</a>
+        <a class="footer" href="#">Payment Options</a>
+        <a class="footer" href="#">Gift Cards</a>
+        <a class="footer" href="#">Gift Card Balance Checker</a>
+        <a class="footer" href="#">Repairs & Warranty</a>
+        <a class="footer" href="#">Consumer Guarantees Act</a> -->
+      </div>
+      <div>
+        <strong>Services</strong>
+        <a class="footer" href="#" style="margin-top: 10px">Get Advice</a>
+        <a class="footer" href="#">Get Setup</a>
+        <a class="footer" href="#">Get Covered</a>
+        <a class="footer" href="#">Get Help</a>
+        <!-- <a class="footer" href="#">Get Help for your Business</a>
+        <a class="footer" href="#">View all Services</a> -->
+      </div>
+
+      <div>
+        <strong>Corporate</strong>
+        <a class="footer" href="#" style="margin-top: 10px">Investor Centre</a>
+        <a class="footer" href="#">Media Centre</a>
+        <a class="footer" href="#">Careers</a>
+        <a class="footer" href="#">View all Services</a>
+      </div>
+
+      <div style="margin: 10px">
+        <strong>JB HiFi App</strong>
+        <img
+          src="image/available_on_both_stores_generated 1.png"
+          alt=""
+          style="margin-bottom: 20px"
+        />
+        <div class="social">
+          <a href="#"><i class="fab fa-github fa-2x"></i></a>
+          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="payment_options">
+      We Accept
+      <img src="image/visa-115507187089o8siwhhtf.png" alt="" />
+      <img src="image/mastercard.png" alt="" />
+      <img
+        src="image/443-4430175_afterpay-logo-png-square-colour-afterpay-png-transparent.png"
+        alt=""
+      />
     </div>
 
     <script
