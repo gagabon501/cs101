@@ -62,6 +62,7 @@ function viewCart() {
     //create containing div for the product
     div_product = document.createElement("div");
     div_product.className = "product_card";
+    // div_product.className = "card";
     div_product.id = "prod_" + i;
     products_div.appendChild(div_product); //add to the DOM
 
@@ -143,7 +144,7 @@ function viewCart() {
 
 function selectDelivery(delivery) {
   // console.log(delivery);
-  const delvFee = localStorage.setItem("delvFee", delivery === "free" ? 0 : 6);
+  localStorage.setItem("delvFee", delivery === "free" ? 0 : 6);
   document.getElementById("click_collect_value").innerText =
     delivery === "free" ? "FREE" : "$6";
   totalCost();
@@ -151,17 +152,30 @@ function selectDelivery(delivery) {
 
 function totalCost() {
   let totalCost = 0;
-  // const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  let subTotal = 0;
+  let delvFee =
+    localStorage.getItem("delvFee") === null
+      ? 0
+      : parseInt(localStorage.getItem("delvFee"));
+
   const cartItems = JSON.parse(localStorage.getItem("cartItems"));
   for (i = 0; i < cartItems.length; i++) {
     totalCost += parseInt(cartItems[i].price) * parseInt(cartItems[i].qty);
   }
-  totalCost += parseInt(localStorage.getItem("delvFee"));
-  console.log(totalCost);
+  subTotal = totalCost;
+  totalCost += delvFee;
+
   document.getElementById("sub_total_amount").innerText =
-    "$" + totalCost.toLocaleString("en-US");
+    "$" + subTotal.toLocaleString("en-US");
   document.getElementById("total_amount").innerText =
     "$" + totalCost.toLocaleString("en-US");
+  if (delvFee === 0) {
+    document.getElementById("click_collect").setAttribute("checked", "checked");
+    document.getElementById("click_collect_value").innerText = "FREE";
+  } else {
+    document.getElementById("std_deliver").setAttribute("checked", "checked");
+    document.getElementById("click_collect_value").innerText = "$6";
+  }
 }
 
 // Load products dynamically

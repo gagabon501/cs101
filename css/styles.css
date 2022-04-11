@@ -190,13 +190,6 @@ a.footer:active {
   padding: 0;
 }
 
-/* .about {
-  max-width: 800px;
-  margin: 30px auto;
-  overflow: auto;
-  padding: 0;
-} */
-
 .login-form {
   margin: auto;
   height: 350px;
@@ -289,14 +282,6 @@ button.add_cart {
   margin-top: 0;
 }
 
-/* .prod_name {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-} */
-
 .form-control {
   margin: 5px 5px;
   padding: 5px 10px;
@@ -374,7 +359,9 @@ button.add_cart {
 .product_card {
   background-color: #fff;
   color: #333;
-  border-bottom: 1px solid #c4c4c4;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin: 5px 0px;
 }
 
 .order_summary {
@@ -388,7 +375,8 @@ button.add_cart {
 .prod_name {
   margin-top: 20px;
   font-weight: bold;
-  color: blue;
+  font-size: 1em;
+  color: #333;
   text-align: center;
 }
 
@@ -633,6 +621,7 @@ button.add_cart {
     color: #fff;
     display: block;
   }
+
   .left_col {
     display: flex;
     flex-direction: row;
@@ -669,18 +658,20 @@ button.add_cart {
     padding: 0;
   }
 
-  .gg_flex {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
   .gg_navbar {
     height: 200px;
   }
 
   .gg_navbar .gg_flex {
     flex-direction: column;
+    /* justify-content: space-between; */
+    justify-content: baseline;
+  }
+
+  .gg_navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: small;
   }
 
   .gg_search_bar {
