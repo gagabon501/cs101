@@ -54,14 +54,8 @@ img {
 
 .gg_carousel {
   max-width: 900px;
-  height: 900x;
+  height: 800px;
   margin: auto;
-}
-
-.carousel {
-  width: 100%;
-  height: 100%;
-  margin: 0px auto;
 }
 
 .gg_flex {
@@ -545,10 +539,11 @@ button.add_cart {
 
 /* Mobile */
 @media (max-width: 500px) {
-  .carousel {
-    width: 100%;
-    height: fit-content;
-    margin: 0px auto;
+  .gg_carousel {
+    max-width: 900px;
+    height: 600px;
+    margin: auto;
+    overflow: hidden;
   }
 
   .login_content {
