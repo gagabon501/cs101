@@ -46,7 +46,7 @@ img {
 }
 
 .gg_container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: auto;
   padding: 0 40px;
@@ -704,7 +704,7 @@ button.add_cart {
   }
 
   .gg_navbar {
-    height: 200px;
+    height: 300px;
   }
 
   .gg_navbar .gg_flex {
