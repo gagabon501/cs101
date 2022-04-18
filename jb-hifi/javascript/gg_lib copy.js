@@ -61,7 +61,8 @@ function viewCart() {
   for (i = 0; i < cartItems.length; i++) {
     //create containing div for the product
     div_product = document.createElement("div");
-    div_product.className = "gg_card";
+    div_product.className = "product_card";
+    // div_product.className = "card";
     div_product.id = "prod_" + i;
     products_div.appendChild(div_product); //add to the DOM
 
@@ -70,138 +71,43 @@ function viewCart() {
     div_product_container.id = "prod_container_" + i;
     document.getElementById("prod_" + i).appendChild(div_product_container); //add to the DOM
 
+    div_product_desc = document.createElement("div");
+    div_product_desc.className = "prod_desc";
+    div_product_desc.id = "prod_desc_" + i;
+    document
+      .getElementById("prod_container_" + i)
+      .appendChild(div_product_desc); //add to the DOM
+
+    img_container = document.createElement("div");
+    img_container.className = "cart_img_container";
+    img_container.id = "img_container_" + i;
+    document.getElementById(`prod_desc_${i}`).appendChild(img_container);
+
     // create the product image element
     img = document.createElement("img");
-    img.setAttribute("align", "left");
-    img.className = "product_image_cart";
+    img.className = "product_image";
     img.src = products[i].image;
     img.id = "product_image_" + i;
-    document.getElementById(`prod_container_${i}`).appendChild(img);
+    document.getElementById(`img_container_${i}`).appendChild(img);
 
     // create h5
     prod_name = document.createElement("h5");
     prod_name.className = "prod_name";
     prod_name.id = "prod_name_" + i;
     prod_name.innerText = products[i].name;
-    document.getElementById(`prod_container_${i}`).appendChild(prod_name);
+    document.getElementById(`prod_desc_${i}`).appendChild(prod_name);
 
     // create div element for the product description
-    p_div = document.createElement("p");
+    p_div = document.createElement("div");
     p_div.innerText = products[i].description;
+    p_div.className = "prod_desc_cart";
     p_div.id = "prod_desc_cart_" + i;
-    document.getElementById(`prod_container_${i}`).appendChild(p_div);
-
-    protect_div = document.createElement("div");
-    protect_div.className = "protect";
-    protect_div.id = "protect_" + i;
-    document.getElementById(`prod_container_${i}`).appendChild(protect_div);
-
-    p_protect = document.createElement("p");
-    p_protect.id = "p_protect_" + i;
-    p_protect.className = "p_protect";
-    p_protect.innerText = "Protect your product:";
-    document.getElementById(`protect_${i}`).appendChild(p_protect);
-
-    protect_form = document.createElement("form");
-    protect_form.id = "protect_form_" + i;
-    protect_form.className = "protect_form";
-    document.getElementById(`protect_${i}`).appendChild(protect_form);
-
-    // 3-year protection
-    protect_radio_3 = document.createElement("input");
-    protect_radio_3.id = "three_yr_" + i;
-    protect_radio_3.className = "protect_radio";
-    protect_radio_3.setAttribute("name", "protect");
-    protect_radio_3.setAttribute("value", "330");
-    protect_radio_3.setAttribute("type", "radio");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_radio_3);
-
-    protect_radio_3_label = document.createElement("label");
-    protect_radio_3_label.id = "protect_radio_3_label_" + i;
-    protect_radio_3_label.className = "protect_radio_label";
-    protect_radio_3_label.setAttribute("for", `three_yr_${i}`);
-    protect_radio_3_label.innerText = "3 year protection - $330.00";
-    document
-      .getElementById(`protect_form_${i}`)
-      .appendChild(protect_radio_3_label);
-
-    protect_br = document.createElement("br");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_br);
-    // 3-year end
-
-    // 2-year protection
-    protect_radio_2 = document.createElement("input");
-    protect_radio_2.id = "two_yr_" + i;
-    protect_radio_2.className = "protect_radio";
-    protect_radio_2.setAttribute("name", "protect");
-    protect_radio_2.setAttribute("value", "250");
-    protect_radio_2.setAttribute("type", "radio");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_radio_2);
-
-    protect_radio_2_label = document.createElement("label");
-    protect_radio_2_label.id = "protect_radio_2_label_" + i;
-    protect_radio_2_label.className = "protect_radio_label";
-    protect_radio_2_label.setAttribute("for", `two_yr_${i}`);
-    protect_radio_2_label.innerText = "2 year protection - $250.00";
-    document
-      .getElementById(`protect_form_${i}`)
-      .appendChild(protect_radio_2_label);
-
-    protect_br = document.createElement("br");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_br);
-    // 2-year end
-
-    // 1-year protection
-    protect_radio_1 = document.createElement("input");
-    protect_radio_1.id = "one_yr_" + i;
-    protect_radio_1.className = "protect_radio";
-    protect_radio_1.setAttribute("name", "protect");
-    protect_radio_1.setAttribute("value", "150");
-    protect_radio_1.setAttribute("type", "radio");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_radio_1);
-
-    protect_radio_1_label = document.createElement("label");
-    protect_radio_1_label.id = "protect_radio_1_label_" + i;
-    protect_radio_1_label.className = "protect_radio_label";
-    protect_radio_1_label.setAttribute("for", `one_yr_${i}`);
-    protect_radio_1_label.innerText = "1 year protection - $150.00";
-    document
-      .getElementById(`protect_form_${i}`)
-      .appendChild(protect_radio_1_label);
-
-    protect_br = document.createElement("br");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_br);
-    // 1-year end
-
-    // no protection
-    protect_radio_0 = document.createElement("input");
-    protect_radio_0.id = "no_thanks_" + i;
-    protect_radio_0.className = "protect_radio";
-    protect_radio_0.setAttribute("name", "protect");
-    protect_radio_0.setAttribute("value", "0");
-    protect_radio_0.setAttribute("type", "radio");
-    protect_radio_0.setAttribute("checked", "true");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_radio_0);
-
-    protect_radio_0_label = document.createElement("label");
-    protect_radio_0_label.id = "protect_radio_1_label_" + i;
-    protect_radio_0_label.className = "protect_radio_label";
-    protect_radio_0_label.setAttribute("for", `no_thanks_${i}`);
-
-    protect_radio_0_label.innerText = "No thanks";
-    document
-      .getElementById(`protect_form_${i}`)
-      .appendChild(protect_radio_0_label);
-
-    protect_br = document.createElement("br");
-    document.getElementById(`protect_form_${i}`).appendChild(protect_br);
-    // no protection end
+    document.getElementById(`prod_desc_${i}`).appendChild(p_div);
 
     vert_strip = document.createElement("div");
     vert_strip.className = "vert_strip";
     vert_strip.id = "vert_strip_" + i;
-    // document.getElementById(`prod_container_${i}`).appendChild(vert_strip);
-    document.getElementById("prod_" + i).appendChild(vert_strip); //add to the DOM
+    document.getElementById("prod_container_" + i).appendChild(vert_strip);
 
     my_input = document.createElement("div");
     my_input.className = "my_input";
@@ -211,26 +117,20 @@ function viewCart() {
     qty = document.createElement("input");
     qty.className = "qty";
     qty.id = "qty_" + i;
-    // document.getElementById("my_input_" + i).appendChild(qty);
-    document.getElementById(`vert_strip_${i}`).appendChild(qty);
-
+    document.getElementById("my_input_" + i).appendChild(qty);
     qty.setAttribute("type", "text");
     qty.setAttribute("value", products[i].qty);
 
     qty.addEventListener("change", (e) => inputHandler(e));
-    div_button = document.createElement("div");
-    div_button.id = "div_button_" + i;
-    div_button.className = "close";
-    document.getElementById(`prod_` + i).appendChild(div_button);
 
     btn = document.createElement("button");
-    btn.className = "close_button";
+    btn.className = "close";
     btn.id = "btn_" + i;
-    // document.getElementById("my_input_" + i).appendChild(btn);
-    document.getElementById("div_button_" + i).appendChild(btn);
+    document.getElementById("my_input_" + i).appendChild(btn);
     btn.setAttribute("onclick", `removeItem(${i},${products[i].id})`);
+    // button.setAttribute("onclick", `addToCart(${i})`); //way to go! this is the way to add the onclick method on to the button
     icon = document.createElement("i");
-    icon.className = "fa-solid fa-trash-can fa-2x";
+    icon.className = "fa-solid fa-circle-minus";
     icon.id = "icon_" + i;
     document.getElementById("btn_" + i).appendChild(icon);
 

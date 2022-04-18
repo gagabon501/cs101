@@ -228,7 +228,7 @@ a.footer:active {
 .product {
   margin: 10px;
   display: grid;
-  grid-template-rows: 500px 50px 50px 200px;
+  grid-template-rows: 320px 50px 20px 180px;
   /* overflow: hidden; */
 }
 
@@ -289,7 +289,15 @@ button.add_cart {
 .close {
   border: none;
   background-color: inherit;
-  margin-top: 0;
+  margin: 30px auto;
+  width: 100%;
+}
+
+.close_button {
+  border: none;
+  background-color: inherit;
+  color: red;
+  margin: 0 auto;
 }
 
 .form-control {
@@ -298,21 +306,33 @@ button.add_cart {
 }
 
 .qty {
-  font-weight: bold;
-  text-align: center;
-  color: #333;
   border: 1px solid #333;
-  padding: 5px;
-  margin: 10px 10px;
+  padding: 10px;
+  margin: 30px 50px 5px 50px;
+  width: 50px;
+  text-align: center;
 }
 
 .my_input {
   display: flex;
 }
 
+.protect {
+  margin-left: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.protect_radio_label {
+  margin: 5px;
+}
+
 .vert_strip {
-  background-color: white;
-  margin: 10px;
+  height: 100%;
+  width: 150px;
+  background-color: #e5e6ec;
+  text-align: center;
 }
 
 .card {
@@ -322,6 +342,16 @@ button.add_cart {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 10px;
+}
+
+.gg_card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 600px 150px 30px;
 }
 
 .gg_input {
@@ -379,21 +409,32 @@ button.add_cart {
 }
 
 .prod_container {
-  display: flex;
+  margin: 20px 10px;
 }
 
 .prod_name {
-  margin-top: 20px;
   font-weight: bold;
   font-size: 1em;
   color: #333;
   text-align: center;
 }
 
-.product_image {
+/* .product_image {
   width: 100%;
   height: 100%;
   margin: auto;
+} */
+
+.product_image {
+  width: 250px;
+  height: 300px;
+  margin: 10px;
+}
+
+.product_image_cart {
+  width: 250px;
+  height: 300px;
+  margin: 10px;
 }
 
 .img_container {
@@ -409,6 +450,14 @@ button.add_cart {
 }
 
 .section_main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 100%;
+  margin: 50px 200px;
+}
+
+.gg_section_main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -460,7 +509,7 @@ button.add_cart {
   border: none;
   border-radius: 25px;
   padding: 10px;
-  background-color: #047aed;
+  background-color: #304db6;
 }
 
 .gg_button_register {
@@ -504,6 +553,12 @@ button.add_cart {
     height: 100%;
   }
 
+  .product_image {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+  }
+
   .best_sellers {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -513,7 +568,7 @@ button.add_cart {
   .product {
     margin: 10px;
     display: grid;
-    grid-template-rows: 400px 30px 30px 100px;
+    grid-template-rows: 400px 30px 30px 180px;
   }
 
   .section_main {
@@ -571,10 +626,55 @@ button.add_cart {
 
 /* Mobile */
 @media (max-width: 500px) {
+  .qty {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 30px 10px 5px 10px;
+    width: 50px;
+    text-align: center;
+  }
+
+  .vert_strip {
+    height: 100%;
+    width: 100px;
+    background-color: #e5e6ec;
+    text-align: center;
+  }
+
+  .gg_card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 320px 100px 20px;
+  }
+
+  .close {
+    border: none;
+    background-color: inherit;
+    margin: 30px 10px;
+    width: 100%;
+  }
+
+  .close_button {
+    border: none;
+    background-color: inherit;
+    color: red;
+    margin: 0 auto;
+  }
+
+  .product_image_cart {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+  }
+
   .product {
     margin: 10px;
     display: grid;
-    grid-template-rows: 500px 30px 30px 150px;
+    grid-template-rows: 500px 50px 40px 180px;
   }
   .card {
     background-color: #fff;
@@ -640,11 +740,6 @@ button.add_cart {
     margin-left: 5px;
   }
 
-  .prod_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
   .prod_desc {
     margin: 10px;
     padding: 10px;
@@ -659,12 +754,6 @@ button.add_cart {
     display: grid;
     grid-template-columns: 1fr;
     margin: 20px 0px;
-  }
-
-  .protect {
-    margin-left: 10px;
-    color: #fff;
-    display: block;
   }
 
   .left_col {
