@@ -5,6 +5,7 @@
   margin: 0;
 }
 
+/* Elements */
 body {
   font-family: "Lato", sans-serif;
   color: #333;
@@ -45,6 +46,8 @@ img {
   height: auto;
 }
 
+/* Classes */
+
 .gg_container {
   max-width: 1200px;
   margin: 0 auto;
@@ -82,6 +85,12 @@ img {
   color: black;
   padding: 5px;
   width: 500px;
+}
+
+.nav_search {
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 .gg_logo {
@@ -148,7 +157,9 @@ img {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   margin-top: 100px;
 }
-
+.social {
+  margin-top: 10px;
+}
 .social a {
   margin: 20px 10px;
   color: #fff;
@@ -168,6 +179,10 @@ a.footer:active {
   background-color: #191eb0;
   color: white;
   border-radius: 25px;
+}
+
+.top_footer {
+  margin-top: 20px;
 }
 
 .contact-form {
@@ -217,19 +232,10 @@ a.footer:active {
   margin: 20px 0;
 }
 
-#message {
-  padding: 5px;
-  border: 1px solid #c4c4c4;
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-/* Used grid-template-rows to create a uniform line height for each product's information i.e product image, price, name of product, and the description. Used 'px' to control the size of each row */
 .product {
   margin: 10px;
   display: grid;
   grid-template-rows: 450px 50px 20px 180px;
-  /* overflow: hidden; */
 }
 
 .prod_desc {
@@ -361,41 +367,6 @@ button.add_cart {
   border: 1px solid #c4c4c4;
 }
 
-#customer_help {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-}
-
-#section_1 {
-  border: 1px solid #c4c4c4;
-  padding: 20px;
-  margin: 10px 0px;
-}
-#section_1_header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 20px 0px;
-}
-
-#section_2 {
-  background-color: #f5f0f0;
-  padding: 20px;
-}
-
-#section_3 {
-  background-color: #f5f0f0;
-  padding: 20px;
-  margin-top: 20px;
-  height: auto;
-}
-
-#more {
-  padding: 5px;
-  background-color: #e8d3d3;
-  border: 1px solid #c4c4c4;
-  border-radius: 50px;
-}
 .product_card {
   background-color: #fff;
   color: #333;
@@ -405,7 +376,12 @@ button.add_cart {
 }
 
 .order_summary {
+  background-color: #fff;
   color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  display: grid;
 }
 
 .prod_container {
@@ -418,12 +394,6 @@ button.add_cart {
   color: #333;
   text-align: center;
 }
-
-/* .product_image {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-} */
 
 .product_image {
   width: 100%;
@@ -510,6 +480,7 @@ button.add_cart {
   border-radius: 25px;
   padding: 10px;
   background-color: #304db6;
+  margin: 10px;
 }
 
 .gg_button_register {
@@ -524,6 +495,71 @@ button.add_cart {
   text-align: center;
 }
 
+.about {
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: auto;
+  padding: 0;
+}
+
+/* IDs here */
+#total_items {
+  margin-left: 10px;
+}
+
+#on_sale {
+  text-align: end;
+}
+
+#on_sale_div {
+  height: 50px;
+  width: 200px;
+  margin: 5px 0px 0px 0px;
+  overflow: visible;
+}
+#message {
+  padding: 5px;
+  border: 1px solid #c4c4c4;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#customer_help {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+#section_1 {
+  border: 1px solid #c4c4c4;
+  padding: 20px;
+  margin: 10px 0px;
+}
+#section_1_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px 0px;
+}
+
+#section_2 {
+  background-color: #f5f0f0;
+  padding: 20px;
+}
+
+#section_3 {
+  background-color: #f5f0f0;
+  padding: 20px;
+  margin-top: 20px;
+  height: auto;
+}
+
+#more {
+  padding: 5px;
+  background-color: #e8d3d3;
+  border: 1px solid #c4c4c4;
+  border-radius: 50px;
+}
+
 #apply {
   margin-top: 30px;
   padding: 5px;
@@ -535,14 +571,7 @@ button.add_cart {
   margin: 0 20px;
 }
 
-.about {
-  max-width: 800px;
-  margin: 30px auto;
-  overflow: auto;
-  padding: 0;
-}
-
-/* Media Queries */
+/* Media Queries - Tablet */
 @media (max-width: 768px) {
   .login_content {
     display: grid;
@@ -624,7 +653,7 @@ button.add_cart {
   }
 }
 
-/* Mobile */
+/* Media Queries - Mobile */
 @media (max-width: 500px) {
   .qty {
     border: 1px solid #333;
@@ -685,6 +714,7 @@ button.add_cart {
     margin: 10px;
     overflow-y: hidden;
   }
+
   .gg_carousel {
     max-width: 900px;
     height: 600px;
@@ -779,11 +809,6 @@ button.add_cart {
     display: grid;
     grid-template-columns: 1fr;
   }
-
-  /* .w-100 {
-    width: 100% !important;
-    height: auto;
-  } */
 
   .gg_container {
     max-width: 400px;

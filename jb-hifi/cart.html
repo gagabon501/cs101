@@ -29,10 +29,7 @@
             id="search"
             placeholder="Search products..."
           />
-          <i
-            style="float: right; margin-top: 5px; margin-right: 5px"
-            class="fa-solid fa-magnifying-glass"
-          ></i>
+          <i class="fa-solid fa-magnifying-glass nav_search"></i>
         </div>
 
         <nav>
@@ -43,7 +40,7 @@
             <li>
               <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
             </li>
-            <li id="total_items" style="margin-left: 10px">0</li>
+            <li id="total_items">0</li>
           </ul>
         </nav>
       </div>
@@ -56,82 +53,80 @@
       <div class="section_main">
         <div id="products" class="products"></div>
 
-        <div id="order_summary" class="order_summary">
-          <div class="col_contents card">
-            <h5>Delivery method</h5>
-            <div class="deliver card">
-              <form>
-                <input
-                  type="radio"
-                  id="click_collect"
-                  name="collect"
-                  value="click_collect"
-                  onclick="selectDelivery('free')"
-                />
-                <label for="click_collect">Click and Collect</label><br />
-                <input
-                  type="radio"
-                  id="std_deliver"
-                  name="collect"
-                  value="std_deliver"
-                  onclick="selectDelivery('std')"
-                />
-                <label for="std_deliver">Standard delivery</label><br />
-              </form>
-              <div>
-                FREE<br />
-                $6.00
-              </div>
+        <div id="order_summary" class="col_contents order_summary">
+          <h5>Delivery method</h5>
+          <div class="deliver">
+            <form>
+              <input
+                type="radio"
+                id="click_collect"
+                name="collect"
+                value="click_collect"
+                onclick="selectDelivery('free')"
+              />
+              <label for="click_collect">Click and Collect</label><br />
+              <input
+                type="radio"
+                id="std_deliver"
+                name="collect"
+                value="std_deliver"
+                onclick="selectDelivery('std')"
+              />
+              <label for="std_deliver">Standard delivery</label><br />
+            </form>
+            <div>
+              FREE<br />
+              $6.00
             </div>
-
-            <div class="deliver">
-              <div class="promo">
-                <label for="promo_code">Apply promo code</label>
-                <input type="text" id="promo_code" name="promo" />
-              </div>
-              <button id="apply">Apply</button>
-            </div>
-            <h2>Order Summary</h2>
-            <div class="deliver">
-              <h5 id="sub_total">Sub-Total</h5>
-              <h5 id="sub_total_amount"></h5>
-              <h5 id="click_collect_label">Click & Collect</h5>
-              <h5 id="click_collect_value">FREE</h5>
-              <h4 id="total">TOTAL TO PAY</h4>
-              <h4 id="total_amount"></h4>
-            </div>
-            <button class="gg_button">PROCEED TO CHECKOUT</button>
           </div>
+
+          <div class="deliver">
+            <div class="promo">
+              <label for="promo_code">Apply promo code</label>
+              <input type="text" id="promo_code" name="promo" />
+            </div>
+            <button id="apply">Apply</button>
+          </div>
+          <h2>Order Summary</h2>
+          <div class="deliver">
+            <h5 id="sub_total">Sub-Total</h5>
+            <h5 id="sub_total_amount"></h5>
+            <h5 id="click_collect_label">Click & Collect</h5>
+            <h5 id="click_collect_value">FREE</h5>
+            <h4 id="total">TOTAL TO PAY</h4>
+            <h4 id="total_amount"></h4>
+          </div>
+          <button class="gg_button">PROCEED TO CHECKOUT</button>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
     <footer id="footer" class="gg_footer">
-      <div>
+      <div class="top_footer">
         <strong>Your Order</strong>
-        <a class="footer" href="#" style="margin-top: 10px">Track Order</a>
+        <a class="footer" href="#">Track Order</a>
         <a class="footer" href="#">Delivery</a>
         <a class="footer" href="#">Click & Collect</a>
         <a class="footer" href="#">Online Returns</a>
       </div>
-      <div>
+      <div class="top_footer">
         <strong>About</strong>
-        <a class="footer" href="#" style="margin-top: 10px">Commercial Sales</a>
+        <a class="footer" href="#">Commercial Sales</a>
         <a class="footer" href="#">Price Promise</a>
         <a class="footer" href="#">Privacy Policy</a>
         <a class="footer" href="#">Buying Guides</a>
       </div>
-      <div>
+      <div class="top_footer">
         <strong>Customer Care</strong>
-        <a class="footer" href="#" style="margin-top: 10px">Help Centere</a>
+        <a class="footer" href="#">Help Centere</a>
         <a class="footer" href="#">Contact Us</a>
         <a class="footer" href="#">Feedback</a>
         <a class="footer" href="#">Returns and Exchanges</a>
       </div>
-      <div>
+      <div class="top_footer">
         <strong>Services</strong>
-        <a class="footer" href="#" style="margin-top: 10px">Get Advice</a>
+        <a class="footer" href="#">Get Advice</a>
         <a class="footer" href="#">Get Setup</a>
         <a class="footer" href="#">Get Covered</a>
         <a class="footer" href="#">Get Help</a>
@@ -139,21 +134,17 @@
         <a class="footer" href="#">View all Services</a> -->
       </div>
 
-      <div>
+      <div class="top_footer">
         <strong>Corporate</strong>
-        <a class="footer" href="#" style="margin-top: 10px">Investor Centre</a>
+        <a class="footer" href="#">Investor Centre</a>
         <a class="footer" href="#">Media Centre</a>
         <a class="footer" href="#">Careers</a>
         <a class="footer" href="#">View all Services</a>
       </div>
 
-      <div style="margin: 10px">
+      <div class="top_footer">
         <strong>JB HiFi App</strong>
-        <img
-          src="image/google_apple_store_logos.png"
-          alt=""
-          style="margin-bottom: 20px"
-        />
+        <img src="image/google_apple_store_logos.png" alt="jbhifi app" />
         <div class="social">
           <a href="#"><i class="fab fa-github fa-2x"></i></a>
           <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
