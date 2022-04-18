@@ -48,18 +48,29 @@ img {
 
 /* Desktop Screen Classes */
 
+.gg_carousel {
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/* .carousel {
+  background-color: #047aed;
+} */
+
+.carousel-item {
+  width: 100%;
+  height: 10%;
+}
+
+/* w-100 {
+  background-color: red !important;
+} */
+
 .gg_container {
   max-width: 1200px;
   margin: 0 auto;
   overflow: auto;
   padding: 0 40px;
-}
-
-.gg_carousel {
-  max-width: 900px;
-  height: 900px;
-  margin: auto;
-  overflow: hidden;
 }
 
 .gg_flex {
