@@ -45,6 +45,18 @@ function inputHandler(e) {
   totalCost();
 }
 
+function setProtect(index, fee) {
+  // // console.log(e);
+  // // const id = e.target.id;
+  // console.log(id);
+  // const index = parseInt(id.substr(4, 1));
+  console.log(index);
+  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  cartItems[index].protect_fee = fee;
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  totalCost();
+}
+
 function viewCart() {
   showCart();
   totalCost();
@@ -109,17 +121,20 @@ function viewCart() {
 
     // 3-year protection
     protect_radio_3 = document.createElement("input");
-    protect_radio_3.id = "three_yr_" + i;
+    protect_radio_3.id = "yr3_" + i;
     protect_radio_3.className = "protect_radio";
-    protect_radio_3.setAttribute("name", "protect");
+    protect_radio_3.setAttribute("name", "protect_" + i);
     protect_radio_3.setAttribute("value", "330");
     protect_radio_3.setAttribute("type", "radio");
+    protect_radio_3.setAttribute("onclick", `setProtect(${i},330)`);
+    // protect_radio_3.addEventListener("click", (e) => setProtect(e));
+    //  qty.addEventListener("change", (e) => inputHandler(e));
     document.getElementById(`protect_form_${i}`).appendChild(protect_radio_3);
 
     protect_radio_3_label = document.createElement("label");
     protect_radio_3_label.id = "protect_radio_3_label_" + i;
     protect_radio_3_label.className = "protect_radio_label";
-    protect_radio_3_label.setAttribute("for", `three_yr_${i}`);
+    protect_radio_3_label.setAttribute("for", `yr3_${i}`);
     protect_radio_3_label.innerText = "3 year protection - $330.00";
     document
       .getElementById(`protect_form_${i}`)
@@ -131,17 +146,19 @@ function viewCart() {
 
     // 2-year protection
     protect_radio_2 = document.createElement("input");
-    protect_radio_2.id = "two_yr_" + i;
+    protect_radio_2.id = "yr2_" + i;
     protect_radio_2.className = "protect_radio";
-    protect_radio_2.setAttribute("name", "protect");
+    protect_radio_2.setAttribute("name", "protect_" + i);
     protect_radio_2.setAttribute("value", "250");
     protect_radio_2.setAttribute("type", "radio");
+    protect_radio_2.setAttribute("onclick", `setProtect(${i},250)`);
+
     document.getElementById(`protect_form_${i}`).appendChild(protect_radio_2);
 
     protect_radio_2_label = document.createElement("label");
     protect_radio_2_label.id = "protect_radio_2_label_" + i;
     protect_radio_2_label.className = "protect_radio_label";
-    protect_radio_2_label.setAttribute("for", `two_yr_${i}`);
+    protect_radio_2_label.setAttribute("for", `yr2_${i}`);
     protect_radio_2_label.innerText = "2 year protection - $250.00";
     document
       .getElementById(`protect_form_${i}`)
@@ -153,17 +170,19 @@ function viewCart() {
 
     // 1-year protection
     protect_radio_1 = document.createElement("input");
-    protect_radio_1.id = "one_yr_" + i;
+    protect_radio_1.id = "yr1_" + i;
     protect_radio_1.className = "protect_radio";
-    protect_radio_1.setAttribute("name", "protect");
+    protect_radio_1.setAttribute("name", "protect_" + i);
     protect_radio_1.setAttribute("value", "150");
     protect_radio_1.setAttribute("type", "radio");
+    protect_radio_1.setAttribute("onclick", `setProtect(${i},150)`);
+
     document.getElementById(`protect_form_${i}`).appendChild(protect_radio_1);
 
     protect_radio_1_label = document.createElement("label");
     protect_radio_1_label.id = "protect_radio_1_label_" + i;
     protect_radio_1_label.className = "protect_radio_label";
-    protect_radio_1_label.setAttribute("for", `one_yr_${i}`);
+    protect_radio_1_label.setAttribute("for", `yr1_${i}`);
     protect_radio_1_label.innerText = "1 year protection - $150.00";
     document
       .getElementById(`protect_form_${i}`)
@@ -175,18 +194,20 @@ function viewCart() {
 
     // no protection
     protect_radio_0 = document.createElement("input");
-    protect_radio_0.id = "no_thanks_" + i;
+    protect_radio_0.id = "yr0_" + i;
     protect_radio_0.className = "protect_radio";
-    protect_radio_0.setAttribute("name", "protect");
+    protect_radio_0.setAttribute("name", "protect_" + i);
     protect_radio_0.setAttribute("value", "0");
     protect_radio_0.setAttribute("type", "radio");
     protect_radio_0.setAttribute("checked", "true");
+    protect_radio_0.setAttribute("onclick", `setProtect(${i},0)`);
+
     document.getElementById(`protect_form_${i}`).appendChild(protect_radio_0);
 
     protect_radio_0_label = document.createElement("label");
-    protect_radio_0_label.id = "protect_radio_1_label_" + i;
+    protect_radio_0_label.id = "protect_radio_0_label_" + i;
     protect_radio_0_label.className = "protect_radio_label";
-    protect_radio_0_label.setAttribute("for", `no_thanks_${i}`);
+    protect_radio_0_label.setAttribute("for", `yr0_${i}`);
 
     protect_radio_0_label.innerText = "No thanks";
     document
@@ -260,7 +281,9 @@ function totalCost() {
 
   const cartItems = JSON.parse(localStorage.getItem("cartItems"));
   for (i = 0; i < cartItems.length; i++) {
-    totalCost += parseInt(cartItems[i].price) * parseInt(cartItems[i].qty);
+    totalCost +=
+      parseInt(cartItems[i].price) * parseInt(cartItems[i].qty) +
+      parseInt(cartItems[i].protect_fee);
   }
   subTotal = totalCost;
   totalCost += delvFee;
@@ -293,6 +316,7 @@ function loadProducts() {
     price: 1429,
     image: "image/iphone13.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   arrProduct.push({
@@ -303,6 +327,7 @@ function loadProducts() {
     price: 129,
     image: "image/huawuei_phone.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   arrProduct.push({
@@ -313,6 +338,7 @@ function loadProducts() {
     price: 899,
     image: "image/oppo_phone.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   arrProduct.push({
@@ -323,6 +349,7 @@ function loadProducts() {
     price: 699,
     image: "image/go_pro_camera.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   arrProduct.push({
@@ -333,6 +360,7 @@ function loadProducts() {
     price: 1433,
     image: "image/asus_laptop.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   arrProduct.push({
@@ -343,6 +371,7 @@ function loadProducts() {
     price: 349,
     image: "image/drone.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   arrProduct.push({
@@ -353,6 +382,7 @@ function loadProducts() {
     price: 79,
     image: "image/sony_headphone.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   arrProduct.push({
@@ -363,6 +393,7 @@ function loadProducts() {
     price: 1096,
     image: "image/samsung_hd_50.png",
     qty: 0,
+    protect_fee: 0,
   });
 
   //store product object array into the localStorage - used localStorage as some sort of database for the products
