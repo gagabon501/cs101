@@ -48,6 +48,27 @@ img {
 
 /* Desktop Screen Classes */
 
+.carousel {
+  width: 80%;
+  height: 50%;
+  margin: 100px;
+}
+
+.carousel-inner {
+  height: auto;
+  margin: auto;
+}
+
+.carousel-control-prev {
+  padding-right: 80px;
+  margin: auto 0px;
+}
+
+.carousel-control-next {
+  padding-left: 80px;
+  margin: auto 0px;
+}
+
 .gg_container {
   max-width: 1200px;
   margin: 0 auto;
