@@ -530,6 +530,7 @@ button.add_cart {
   margin: 5px 0px 0px 0px;
   overflow: visible;
 }
+
 #message {
   padding: 5px;
   border: 1px solid #c4c4c4;
@@ -668,6 +669,12 @@ button.add_cart {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 100px;
   }
+
+  #on_sale_div {
+    height: 60px;
+    width: 100px;
+    margin: 5px;
+  }
 }
 
 /* Media Queries - Mobile */
@@ -742,10 +749,9 @@ button.add_cart {
   }
 
   .gg_carousel {
-    max-width: 900px;
-    height: 600px;
+    max-width: 500px;
+    height: 100%;
     margin: auto;
-    overflow: hidden;
   }
 
   .login_content {
