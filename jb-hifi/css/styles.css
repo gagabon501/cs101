@@ -46,7 +46,7 @@ img {
   height: auto;
 }
 
-/* Classes */
+/* Desktop Screen Classes */
 
 .gg_container {
   max-width: 1200px;
@@ -160,10 +160,12 @@ img {
 .social {
   margin-top: 10px;
 }
+
 .social a {
   margin: 20px 10px;
   color: #fff;
 }
+
 a.footer:link,
 a.footer:visited {
   color: white;
@@ -571,6 +573,10 @@ button.add_cart {
   margin: 0 20px;
 }
 
+#jbhifi_app {
+  margin: 5px;
+}
+
 /* Media Queries - Tablet */
 @media (max-width: 768px) {
   .login_content {
@@ -661,6 +667,15 @@ button.add_cart {
     margin: 30px 10px 5px 10px;
     width: 50px;
     text-align: center;
+  }
+
+  .social {
+    margin: 5px 0px;
+  }
+
+  .social a {
+    margin: 5px 0px;
+    color: #fff;
   }
 
   .vert_strip {
@@ -849,5 +864,10 @@ button.add_cart {
   #customer_help {
     display: flex;
     flex-direction: column;
+  }
+
+  #jbhifi_app {
+    margin: 5px;
+    width: 80%;
   }
 }
